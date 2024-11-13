@@ -16,6 +16,8 @@ type ArticleCardProps = {
   articleLink: string;
 };
 
+const MAX_TITLE_SIZE = 20;
+
 export default function ArticleCard({
   avatarName,
   avatarDate,
@@ -36,7 +38,12 @@ export default function ArticleCard({
           href={articleLink}
           className="flex items-center justify-between w-full"
         >
-          <div className="text-2xl font-[600]">{title}</div>
+          <div className="text-2xl font-[600]">
+            {" "}
+            {title.length > MAX_TITLE_SIZE
+              ? `${title.slice(0, MAX_TITLE_SIZE)}...`
+              : title}
+          </div>
           <div>
             <RiArrowRightUpLine size={25} />
           </div>
