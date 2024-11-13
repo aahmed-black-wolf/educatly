@@ -8,9 +8,14 @@ const getArticles = async () => {
   return json;
 };
 
-export const useArticlesList = () => {
+export const useArticlesList = ({
+  initialValues,
+}: {
+  initialValues?: TArticlesResponse;
+}) => {
   const query = useQuery<TArticlesResponse>({
     queryKey: ["articles"],
+    initialData: initialValues,
     queryFn: () => getArticles(),
     placeholderData: keepPreviousData,
   });

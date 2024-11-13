@@ -4,13 +4,13 @@ import Article from "./article";
 import { TArticlesResponse } from "@/src/api/@types/articles";
 
 type BlogScreenProps = {
-  articles: TArticlesResponse;
+  articlesResponse: TArticlesResponse;
 };
-export default function BlogScreen({ articles }: BlogScreenProps) {
+export default function BlogScreen({ articlesResponse }: BlogScreenProps) {
   return (
     <section className="relative pb-24">
       <BlogBanner />
-      <Article articles={articles} />
+      <Article articlesResponse={articlesResponse} />
     </section>
   );
 }

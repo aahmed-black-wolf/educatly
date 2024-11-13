@@ -6,10 +6,10 @@ import ArticleList from "./article-list";
 import { TArticlesResponse } from "@/src/api/@types/articles";
 
 type ArticleProps = {
-  articles: TArticlesResponse;
+  articlesResponse: TArticlesResponse;
 };
 
-export default function Article({ articles }: ArticleProps) {
+export default function Article({ articlesResponse }: ArticleProps) {
   return (
     <div className="relative flex flex-col justify-center gap-24 items-center">
       <Image
@@ -19,8 +19,11 @@ export default function Article({ articles }: ArticleProps) {
         fill
         src={BlogBannerLayer}
       />
-      <ArticleList articles={articles} />
-      {/* <NotFoundComponent message="📭 No blogs available just yet! Stay tuned!" /> */}
+      <ArticleList articlesResponse={articlesResponse} />
+      {!articlesResponse ||
+        (articlesResponse?.length == 0 && (
+          <NotFoundComponent message="📭 No blogs available just yet! Stay tuned!" />
+        ))}
     </div>
   );
 }

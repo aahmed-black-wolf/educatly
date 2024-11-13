@@ -22,6 +22,7 @@ export default function Avatar({
       <Image
         width={40}
         height={40}
+        className="rounded-full"
         alt={alt ? alt : "user-info"}
         src={src ? src : avatarImage}
       />
