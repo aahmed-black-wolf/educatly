@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import Avatar from "../../common/avatar";
-import blogImage from "@/public/images/Image.png";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import Link from "next/link";
 
@@ -13,6 +12,7 @@ type ArticleCardProps = {
   title: string;
   description: string;
   articleLink: string;
+  articleImage: string;
 };
 
 const MAX_TITLE_SIZE = 20;
@@ -25,12 +25,13 @@ export default function ArticleCard({
   title,
   description,
   articleLink,
+  articleImage,
 }: ArticleCardProps) {
   return (
     <div className="shadow-xl z-[2] bg-white flex flex-col justify-between  p-6 h-[580px] min-w-[384px] max-w-[384px]">
       <div className="flex flex-col gap-2">
         <div className="relative w-full lg:w-[336px] h-[200px] lg:h-[240px] mb-6">
-          <Image alt="blogImage" fill src={blogImage} />
+          <Image alt="blogImage" fill src={articleImage} />
         </div>
         <div className="text-main-800 font-[600]">{job}</div>
         <Link

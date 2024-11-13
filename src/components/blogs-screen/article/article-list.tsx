@@ -57,6 +57,7 @@ export default function ArticleList({ articlesResponse }: ArticleListProps) {
               description={article.description}
               job={article.tags}
               title={article.title}
+              articleImage={article?.cover_image || article.social_image}
             />
           </motion.div>
         ))}
