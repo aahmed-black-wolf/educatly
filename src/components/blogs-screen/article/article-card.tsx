@@ -28,7 +28,7 @@ export default function ArticleCard({
   articleLink,
 }: ArticleCardProps) {
   return (
-    <div className="shadow-xl z-[2] bg-white flex flex-col justify-between  p-6 h-[580px] w-full md:w-[384px]">
+    <div className="shadow-xl z-[2] bg-white flex flex-col justify-between  p-6 h-[580px] min-w-[384px] max-w-[384px]">
       <div className="flex flex-col gap-2">
         <div className="relative w-full lg:w-[336px] h-[200px] lg:h-[240px] mb-6">
           <Image alt="blogImage" fill src={blogImage} />
