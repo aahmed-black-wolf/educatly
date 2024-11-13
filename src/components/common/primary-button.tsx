@@ -9,6 +9,7 @@ type PrimaryButtonProps = {
   className?: string;
   title: string;
   isLoading?: boolean;
+  onClick?: () => void;
 };
 
 export default function PrimaryButton({
@@ -16,6 +17,7 @@ export default function PrimaryButton({
   title,
   className,
   isLoading = false,
+  onClick,
 }: PrimaryButtonProps) {
   return (
     <motion.button
@@ -23,6 +25,7 @@ export default function PrimaryButton({
         "flex items-center gap-2 bg-main-700 text-main-600 font-[600] py-3 rounded-md px-4 hover:bg-main-600 hover:text-main-700 ease duration-300",
         className
       )}
+      onClick={onClick}
       disabled={isLoading}
       whileTap={{ scale: 0.75 }}
     >

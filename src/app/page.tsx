@@ -1,9 +1,9 @@
 import { getArticles } from "../api/server/blogs/getAllArticles";
 import BlogScreen from "../components/blogs-screen/index";
 export default async function Home() {
-  const articles = await getArticles();
+  const articlesResponse = await getArticles();
 
-  console.log(articles);
+  console.log(articlesResponse);
 
-  return <BlogScreen articles={articles} />;
+  return <BlogScreen articlesResponse={articlesResponse} />;
 }
