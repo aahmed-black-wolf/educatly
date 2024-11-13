@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Avatar from "../../common/avatar";
 import blogImage from "@/public/images/Image.png";
-import { LiaAnkhSolid } from "react-icons/lia";
 import { RiArrowRightUpLine } from "react-icons/ri";
 import Link from "next/link";
 
